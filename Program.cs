@@ -5,29 +5,36 @@ using System.Runtime.InteropServices;
 
 namespace Basic_Authentication
 {
-    internal class Program
+    public class Program
     {
-        // Connection Secara Global
-        static string connectionString = "Data Source=LAPTOP-8IGJNOSS;Database=db_hr;Integrated Security=True;Connect Timeout=30;";
-        static SqlConnection connection = new SqlConnection(connectionString);
-
-
         private static void Main(string[] args)
         {
-            connection = new SqlConnection(connectionString);
+            /* //GETALL : REGION (Select Tabel Regions)
+             List<Regions> regions = Regions.GetAllRegion();
+             foreach (Regions region in regions)
+             {
+                 Console.WriteLine($"id: {region.Id} Name: {region.Name}");
+             }*/
 
-            //GETALL : REGION (Select Tabel Regions)
-            List<Region> Regions = GetAllRegion();
-            foreach (Region region in Regions)
-            {
-                Console.WriteLine($"id: {region.Id} Name: {region.Name}");
-            }
+            /* //GETALL : COUNTRIES
+             List<Countries> count = Countries.GetAllCountries();
+             foreach (Countries countries in count)
+             {
+                 Console.WriteLine($"Id: {countries.Id} Name: {countries.Name} RegionId: {countries.RegionId}");
+             }*/
+
+            //GETALL : LOCATIONS
+            /*  List<Locations> loc = Locations.GetAllLocations();
+              foreach (Locations locations in loc)
+              {
+                  Console.WriteLine($"Id: {locations.Id} StreetAddress: {locations.StreetAddress} PostalCode: {locations.PostalCode} City: {locations.City} StateProvince: {locations.StateProvince} CountryId: {locations.CountryId}");
+              }*/
 
             //InsertRegion (Insert Tabel Regions)
-            /*Console.WriteLine("== \tInsert To Table\t  ==");
+            Console.WriteLine("== \tInsert To Table\t  ==");
             Console.Write("Masukkan nama region :");
             string name = Console.ReadLine();
-            int isInsertSuccessful = insertRegion(name);
+            int isInsertSuccessful = Regions.insertRegion(name);
             if (isInsertSuccessful > 0)
             {
                 Console.WriteLine("Add Data Success");
@@ -35,29 +42,31 @@ namespace Basic_Authentication
             else
             {
                 Console.WriteLine("Add Data Invalid");
-            }*/
+            }
 
             //Check Connection
-            /*            SqlConnection connection;
-                        connection = new SqlConnection(connectionString);*/
+/*            SqlConnection connection;
+            connection = new SqlConnection(connectionString);
 
-            /* try
-             {
-                 connection.Open();
-                 Console.WriteLine("Connected!");
-                 connection.Close();
-             } 
-             catch (Exception ex) 
-             {
-                 Console.WriteLine("Connection Vailed!");
-             }*/
+            try
+            {
+                connection.Open();
+                Console.WriteLine("Connected!");
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Connection Vailed!");
+            }*/
         }
+    }
+}
 
         //GETALL (Memanggil Tabel)
-        static List<Region> GetAllRegion()
+ /*       static List<Region> GetAllRegion()
         {
-            /*string connectionString;
-            connectionString = "Data Source=LAPTOP-8IGJNOSS;Database=db_hr;Integrated Security=True;Connect Timeout=30;";*/
+            *//*string connectionString;
+            connectionString = "Data Source=LAPTOP-8IGJNOSS;Database=db_hr;Integrated Security=True;Connect Timeout=30;";*//*
 
             var region = new List<Region>();
             try
@@ -95,10 +104,10 @@ namespace Basic_Authentication
             }
             connection.Close();
             return region;
-        }
+        }*/
 
         // Menambahkan Data Pada Tabel
-        public static int insertRegion(string name)
+/*        public static int insertRegion(string name)
         {
             int result = 0;
             connection = new SqlConnection(connectionString);
@@ -143,15 +152,7 @@ namespace Basic_Authentication
             return result;
         }
     }
-           
-    // Membuat Kelas Tabel Region
-    class Region
-    {
-        public int Id { get; set; }
-
-        public string Name { get; set; }
-    }
-}
+*/              
 
             /*User user1 = new User("Aef", "Rohman", "Jakbar2023!", "yes");
             User user2 = new User("Maul", "Lana", "Jakbar2024!", "no");
@@ -160,3 +161,8 @@ namespace Basic_Authentication
             viewMenu.Users.Add(user2);
             viewMenu.App();*/
 
+//Getby ID
+//Update
+//Delete : Region : Countries
+
+// Sisanya GettAll
