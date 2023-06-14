@@ -210,7 +210,7 @@ namespace Basic_Authentication
             }*/
 
             // DELETE TABLE COUNTRIES
-            Console.WriteLine("== \tDelete Table Countries\t ==");
+           /* Console.WriteLine("== \tDelete Table Countries\t ==");
             Console.Write("Masukkan id countries yang di delete : ");
             string id = Console.ReadLine();
             int isDeleteSuccessful = Countries.DeleteCountriesName(id);
@@ -221,22 +221,7 @@ namespace Basic_Authentication
             else
             {
                 Console.WriteLine("Delete Failed");
-            }
+            }*/
         }
     }
 }
-
-                
-
-            /*User user1 = new User("Aef", "Rohman", "Jakbar2023!", "yes");
-            User user2 = new User("Maul", "Lana", "Jakbar2024!", "no");
-            ViewMenu viewMenu = new ViewMenu();
-            viewMenu.Users.Add(user1);
-            viewMenu.Users.Add(user2);
-            viewMenu.App();*/
-
-//Getby ID
-//Update
-//Delete : Region : Countries
-
-// Sisanya GettAll
